@@ -13,8 +13,8 @@ const { OAuth2Client } = require("google-auth-library");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const cors = require("cors");
-app.use(cors());
+// const cors = require("cors");
+// app.use(cors());
 //프록시 적용 안되는거 땜빵
 
 const user_query = "";
@@ -106,14 +106,14 @@ app.post("/login", async (req, res) => {
 
 // app.post("/api/login", (req, res) => {});
 
-app.get("/home", (req, res) => {
+app.get("/home", async (req, res) => {
   console.log("AXIOS 성공!");
   res.json(user_name);
 });
 
 //초기 로그인 화면
 
-app.get("/answer_Query", (req, res) => {
+app.get("/answer_Query", async (req, res) => {
   console.log("answer_Query Get Axios 성공!");
   res.json(answer_query);
 });
